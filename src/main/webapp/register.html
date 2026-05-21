@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BeatStreams — Register</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=Space+Mono&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'DM Sans', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #0a0a0f;
+            background-image: url('images/landing.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background: rgba(10,10,15,0.88);
+        }
+        .card {
+            position: relative;
+            z-index: 1;
+            width: 380px;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 20px;
+            padding: 44px 40px;
+            backdrop-filter: blur(20px);
+        }
+        .logo {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 34px;
+            letter-spacing: 4px;
+            background: linear-gradient(90deg, #f0522a, #ff8c42);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+            margin-bottom: 6px;
+        }
+        .subtitle {
+            text-align: center;
+            font-family: 'Space Mono', monospace;
+            font-size: 9px;
+            letter-spacing: 4px;
+            color: rgba(240,237,232,0.35);
+            margin-bottom: 36px;
+        }
+        label {
+            display: block;
+            font-size: 11px;
+            font-family: 'Space Mono', monospace;
+            letter-spacing: 2px;
+            color: rgba(240,237,232,0.45);
+            margin-bottom: 8px;
+            margin-top: 20px;
+        }
+        input[type=text], input[type=password] {
+            width: 100%;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 13px 16px;
+            color: #f0ede8;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 14px;
+            outline: none;
+            transition: all 0.25s;
+        }
+        input:focus {
+            border-color: rgba(240,82,42,0.5);
+            background: rgba(255,255,255,0.09);
+            box-shadow: 0 0 0 3px rgba(240,82,42,0.1);
+        }
+        .btn {
+            width: 100%;
+            margin-top: 28px;
+            padding: 14px;
+            background: linear-gradient(90deg, #f0522a, #ff8c42);
+            border: none;
+            border-radius: 12px;
+            color: white;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 18px;
+            letter-spacing: 3px;
+            cursor: pointer;
+            transition: opacity 0.2s, transform 0.1s;
+        }
+        .btn:hover { opacity: 0.9; transform: translateY(-1px); }
+        .footer-link {
+            text-align: center;
+            margin-top: 22px;
+            font-size: 13px;
+            color: rgba(240,237,232,0.4);
+        }
+        .footer-link a {
+            color: #ff8c42;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .footer-link a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="logo">BeatStreams</div>
+        <div class="subtitle">CREATE YOUR ACCOUNT</div>
+        <form action="RegisterServlet" method="post">
+            <label>USERNAME</label>
+            <input type="text" name="username" placeholder="Choose a username" required>
+            <label>PASSWORD</label>
+            <input type="password" name="password" placeholder="Choose a password" required>
+            <button type="submit" class="btn">Register</button>
+        </form>
+        <div class="footer-link">Already have an account? <a href="login.html">Login</a></div>
+    </div>
+</body>
+</html>
